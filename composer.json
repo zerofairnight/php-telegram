@@ -1,0 +1,31 @@
+{
+    "name": "zerofairnight/php-telegram",
+    "description": "A telegram API for PHP",
+    "keywords": ["telegram", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zerofairnight",
+            "email": "zerofairnight@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Telegram\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Telegram\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
