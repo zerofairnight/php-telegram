@@ -68,7 +68,7 @@ class Telegram
      */
     public function getBotId()
     {
-        // the first part of the telegram token is the bot id separated by a colon.
+        // the first part of the telegram token, its the bot id separated by a colon.
         return explode(':', $this->token)[0];
     }
 
