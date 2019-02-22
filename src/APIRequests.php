@@ -29,7 +29,7 @@ trait APIRequests
      */
     public function getUpdates(array $params = [])
     {
-        return $this->query(Update::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -46,7 +46,7 @@ trait APIRequests
      */
     public function setWebhook(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -68,7 +68,7 @@ trait APIRequests
      */
     public function getWebhookInfo()
     {
-        return $this->query(WebhookInfo::class);
+        return $this->query();
     }
 
     /**
@@ -79,7 +79,7 @@ trait APIRequests
      */
     public function getMe()
     {
-        return $this->query(User::class);
+        return $this->query();
     }
 
     /**
@@ -99,7 +99,7 @@ trait APIRequests
      */
     public function sendMessage(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -116,7 +116,7 @@ trait APIRequests
      */
     public function forwardMessage(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -136,7 +136,7 @@ trait APIRequests
      */
     public function sendPhoto(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -160,7 +160,7 @@ trait APIRequests
      */
     public function sendAudio(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -181,7 +181,7 @@ trait APIRequests
      */
     public function sendDocument(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -206,7 +206,7 @@ trait APIRequests
      */
     public function sendVideo(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -230,7 +230,7 @@ trait APIRequests
      */
     public function sendAnimation(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -251,7 +251,7 @@ trait APIRequests
      */
     public function sendVoice(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -272,7 +272,7 @@ trait APIRequests
      */
     public function sendVideoNote(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -289,7 +289,7 @@ trait APIRequests
      */
     public function sendMediaGroup(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -309,7 +309,7 @@ trait APIRequests
      */
     public function sendLocation(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -328,7 +328,7 @@ trait APIRequests
      */
     public function editMessageLiveLocation(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -345,7 +345,7 @@ trait APIRequests
      */
     public function stopMessageLiveLocation(array $params = [])
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -368,7 +368,7 @@ trait APIRequests
      */
     public function sendVenue(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -389,7 +389,7 @@ trait APIRequests
      */
     public function sendContact(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -404,7 +404,7 @@ trait APIRequests
      */
     public function sendChatAction(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -420,7 +420,7 @@ trait APIRequests
      */
     public function getUserProfilePhotos(array $params)
     {
-        return $this->query(UserProfilePhotos::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -434,7 +434,7 @@ trait APIRequests
      */
     public function getFile(array $params)
     {
-        return $this->query(File::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -450,7 +450,7 @@ trait APIRequests
      */
     public function kickChatMember(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -465,7 +465,7 @@ trait APIRequests
      */
     public function unbanChatMember(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -485,7 +485,7 @@ trait APIRequests
      */
     public function restrictChatMember(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -508,7 +508,7 @@ trait APIRequests
      */
     public function promoteChatMember(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -522,7 +522,7 @@ trait APIRequests
      */
     public function exportChatInviteLink(array $params)
     {
-        return $this->query(null, $params);
+        return $this->query($params);
     }
 
     /**
@@ -537,7 +537,7 @@ trait APIRequests
      */
     public function setChatPhoto(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -551,7 +551,7 @@ trait APIRequests
      */
     public function deleteChatPhoto(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -566,7 +566,7 @@ trait APIRequests
      */
     public function setChatTitle(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -581,7 +581,7 @@ trait APIRequests
      */
     public function setChatDescription(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -597,7 +597,7 @@ trait APIRequests
      */
     public function pinChatMessage(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -611,7 +611,7 @@ trait APIRequests
      */
     public function unpinChatMessage(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -625,7 +625,7 @@ trait APIRequests
      */
     public function leaveChat(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -639,7 +639,7 @@ trait APIRequests
      */
     public function getChat(array $params)
     {
-        return $this->query(Chat::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -653,7 +653,7 @@ trait APIRequests
      */
     public function getChatAdministrators(array $params)
     {
-        return $this->query(ChatMember::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -667,7 +667,7 @@ trait APIRequests
      */
     public function getChatMembersCount(array $params)
     {
-        return $this->query(int, $params);
+        return $this->query($params);
     }
 
     /**
@@ -682,7 +682,7 @@ trait APIRequests
      */
     public function getChatMember(array $params)
     {
-        return $this->query(ChatMember::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -697,7 +697,7 @@ trait APIRequests
      */
     public function setChatStickerSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -711,7 +711,7 @@ trait APIRequests
      */
     public function deleteChatStickerSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -729,7 +729,7 @@ trait APIRequests
      */
     public function answerCallbackQuery(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -749,7 +749,7 @@ trait APIRequests
      */
     public function editMessageText(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -768,7 +768,7 @@ trait APIRequests
      */
     public function editMessageCaption(array $params = [])
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -786,7 +786,7 @@ trait APIRequests
      */
     public function editMessageMedia(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -803,7 +803,7 @@ trait APIRequests
      */
     public function editMessageReplyMarkup(array $params = [])
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -818,7 +818,7 @@ trait APIRequests
      */
     public function deleteMessage(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -836,7 +836,7 @@ trait APIRequests
      */
     public function sendSticker(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -850,7 +850,7 @@ trait APIRequests
      */
     public function getStickerSet(array $params)
     {
-        return $this->query(StickerSet::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -865,7 +865,7 @@ trait APIRequests
      */
     public function uploadStickerFile(array $params)
     {
-        return $this->query(File::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -885,7 +885,7 @@ trait APIRequests
      */
     public function createNewStickerSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -903,7 +903,7 @@ trait APIRequests
      */
     public function addStickerToSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -918,7 +918,7 @@ trait APIRequests
      */
     public function setStickerPositionInSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -932,7 +932,7 @@ trait APIRequests
      */
     public function deleteStickerFromSet(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -952,7 +952,7 @@ trait APIRequests
      */
     public function answerInlineQuery(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -969,7 +969,7 @@ trait APIRequests
      */
     public function answerShippingQuery(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -985,7 +985,7 @@ trait APIRequests
      */
     public function answerPreCheckoutQuery(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -1000,7 +1000,7 @@ trait APIRequests
      */
     public function setPassportDataErrors(array $params)
     {
-        return $this->query(true, $params);
+        return $this->query($params);
     }
 
     /**
@@ -1018,7 +1018,7 @@ trait APIRequests
      */
     public function sendGame(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -1038,7 +1038,7 @@ trait APIRequests
      */
     public function setGameScore(array $params)
     {
-        return $this->query(Message::class, $params);
+        return $this->query($params);
     }
 
     /**
@@ -1055,7 +1055,7 @@ trait APIRequests
      */
     public function getGameHighScores(array $params)
     {
-        return $this->query(GameHighScore::class, $params);
+        return $this->query($params);
     }
 
     // in the following section we have some helpers
@@ -1075,12 +1075,12 @@ trait APIRequests
         // get the url for download the file
         $url = $this->getFileEndpoint($file->file_path);
 
-        //
+        // TODO: find a better way to do it
         return \file_get_contents($url);
     }
 
     //
-    private function query($type, array $params = [])
+    private function query(array $params = [])
     {
         // get the method from the fucntion name
         [$query, $caller] = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
@@ -1089,8 +1089,6 @@ trait APIRequests
         $request = new Request($caller['function'], $params);
 
         // send the request, this method will return an instance of the responseType
-        return $this->send($request, [
-            'type' => $type
-        ]);
+        return $this->send($request);
     }
 }

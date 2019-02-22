@@ -126,38 +126,45 @@ class Telegram
 
         return $this->client->postAsync($url, $this->createRequestOptions($request, $options))->then(
             //
-            function (\Psr\Http\Message\ResponseInterface $response) use (&$options) {
+            function (\Psr\Http\Message\ResponseInterface $response) use (&$request, &$options) {
+                // we want an associative array
                 $contents = json_decode($response->getBody(), true);
 
-                // if $contents is null or ok is not set the response is not a valid telegram response
+                // if $contents is null or ok is not set, the response is not a valid telegram response
                 if (! isset($contents['ok'])) {
                     throw new RequestException();
-                }
-
-                // we have a valid response
-                if ($contents['ok'] === true) {
-                    // check if we want to cast the response to a given type
-                    if (isset($options['type'])) {
-                        return $this->parseResponse($contents['result'], $options['type']);
-                    }
-
-                    // do not handle the result
-                    return $contents['result'];
                 }
 
                 // here we can have an error that can be caused by
                 // invalid token
                 // method that not exists
                 // missing parameters
-
                 if ($contents['ok'] === false) {
                     // $contents['parameters'] is a ResponseParameters::class
                     throw new RequestException($contents['description']);
                 }
 
-                // here we have a case that should never happen
-                // telegram api will always return $contents['ok'] true or false
-                throw new RequestException();
+                // this should never happen, telegram will always return $contents['ok'] true or false
+                if ($contents['ok'] !== true) {
+                    throw new RequestException();
+                }
+
+                // this is a big change in the code as we use the Response class
+                // to handle the response, it may seems overkill to create a class that we never use
+                // but the idea is that, at some point in the future, we may want to have access to this object
+                // and control the flow of the request
+
+                // create the response, the response should have a reference the the request
+                // we dont bind the response to the telegram instance
+                // this is because the telegram isntance will handle the flow not the individual pieces
+                $res = new Response($request, $contents);
+
+                // here we can have a chance to intercept this response for future usage
+                // $this->onResponse(function ($response))
+
+                // here we bind the response object to this telegram instance
+                // this way the response is independant from the telegram instance
+                return $res->createResponseType($this);
             }
         );
     }
@@ -190,23 +197,5 @@ class Telegram
         }
 
         return $options;
-    }
-
-    protected function parseResponse($data, $type)
-    {
-        // special value
-        if (is_bool($data) || is_numeric($data) || is_string($data)) {
-            return $data;
-        }
-
-        // we have an array of objects
-        // this will check if we have an array of array
-        if (is_array($data) && key($data) === 0) {
-            return array_map(function ($data) use($type) {
-                return $this->parseResponse($data, $type);
-            }, $data);
-        }
-
-        return new $type($data, $this);
     }
 }
