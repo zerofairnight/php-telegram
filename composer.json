@@ -1,5 +1,5 @@
 {
-    "name": "zerofairnight/php-telegram",
+    "name": "zerofairnight/telegram-php",
     "description": "A telegram API for PHP",
     "keywords": ["telegram", "php"],
     "license": "MIT",
