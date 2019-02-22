@@ -57,7 +57,7 @@ trait APIRequests
      */
     public function deleteWebhook()
     {
-        return $this->query(true);
+        return $this->query();
     }
 
     /**
