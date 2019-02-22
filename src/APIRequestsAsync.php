@@ -29,7 +29,7 @@ trait APIRequestsAsync
      */
     public function getUpdatesAsync(array $params = [])
     {
-        return $this->queryAsync(Update::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -46,7 +46,7 @@ trait APIRequestsAsync
      */
     public function setWebhookAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -57,7 +57,7 @@ trait APIRequestsAsync
      */
     public function deleteWebhookAsync()
     {
-        return $this->queryAsync(true);
+        return $this->queryAsync();
     }
 
     /**
@@ -68,7 +68,7 @@ trait APIRequestsAsync
      */
     public function getWebhookInfoAsync()
     {
-        return $this->queryAsync(WebhookInfo::class);
+        return $this->queryAsync();
     }
 
     /**
@@ -79,7 +79,7 @@ trait APIRequestsAsync
      */
     public function getMeAsync()
     {
-        return $this->queryAsync(User::class);
+        return $this->queryAsync();
     }
 
     /**
@@ -99,7 +99,7 @@ trait APIRequestsAsync
      */
     public function sendMessageAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -116,7 +116,7 @@ trait APIRequestsAsync
      */
     public function forwardMessageAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -136,7 +136,7 @@ trait APIRequestsAsync
      */
     public function sendPhotoAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -160,7 +160,7 @@ trait APIRequestsAsync
      */
     public function sendAudioAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -181,7 +181,7 @@ trait APIRequestsAsync
      */
     public function sendDocumentAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -206,7 +206,7 @@ trait APIRequestsAsync
      */
     public function sendVideoAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -230,7 +230,7 @@ trait APIRequestsAsync
      */
     public function sendAnimationAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -251,7 +251,7 @@ trait APIRequestsAsync
      */
     public function sendVoiceAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -272,7 +272,7 @@ trait APIRequestsAsync
      */
     public function sendVideoNoteAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -289,7 +289,7 @@ trait APIRequestsAsync
      */
     public function sendMediaGroupAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -309,7 +309,7 @@ trait APIRequestsAsync
      */
     public function sendLocationAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -328,7 +328,7 @@ trait APIRequestsAsync
      */
     public function editMessageLiveLocationAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -345,7 +345,7 @@ trait APIRequestsAsync
      */
     public function stopMessageLiveLocationAsync(array $params = [])
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -368,7 +368,7 @@ trait APIRequestsAsync
      */
     public function sendVenueAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -389,7 +389,7 @@ trait APIRequestsAsync
      */
     public function sendContactAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -404,7 +404,7 @@ trait APIRequestsAsync
      */
     public function sendChatActionAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -420,7 +420,7 @@ trait APIRequestsAsync
      */
     public function getUserProfilePhotosAsync(array $params)
     {
-        return $this->queryAsync(UserProfilePhotos::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -434,7 +434,7 @@ trait APIRequestsAsync
      */
     public function getFileAsync(array $params)
     {
-        return $this->queryAsync(File::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -450,7 +450,7 @@ trait APIRequestsAsync
      */
     public function kickChatMemberAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -465,7 +465,7 @@ trait APIRequestsAsync
      */
     public function unbanChatMemberAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -485,7 +485,7 @@ trait APIRequestsAsync
      */
     public function restrictChatMemberAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -508,7 +508,7 @@ trait APIRequestsAsync
      */
     public function promoteChatMemberAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -522,7 +522,7 @@ trait APIRequestsAsync
      */
     public function exportChatInviteLinkAsync(array $params)
     {
-        return $this->queryAsync(null, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -537,7 +537,7 @@ trait APIRequestsAsync
      */
     public function setChatPhotoAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -551,7 +551,7 @@ trait APIRequestsAsync
      */
     public function deleteChatPhotoAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -566,7 +566,7 @@ trait APIRequestsAsync
      */
     public function setChatTitleAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -581,7 +581,7 @@ trait APIRequestsAsync
      */
     public function setChatDescriptionAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -597,7 +597,7 @@ trait APIRequestsAsync
      */
     public function pinChatMessageAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -611,7 +611,7 @@ trait APIRequestsAsync
      */
     public function unpinChatMessageAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -625,7 +625,7 @@ trait APIRequestsAsync
      */
     public function leaveChatAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -639,7 +639,7 @@ trait APIRequestsAsync
      */
     public function getChatAsync(array $params)
     {
-        return $this->queryAsync(Chat::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -653,7 +653,7 @@ trait APIRequestsAsync
      */
     public function getChatAdministratorsAsync(array $params)
     {
-        return $this->queryAsync(ChatMember::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -667,7 +667,7 @@ trait APIRequestsAsync
      */
     public function getChatMembersCountAsync(array $params)
     {
-        return $this->queryAsync(int, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -682,7 +682,7 @@ trait APIRequestsAsync
      */
     public function getChatMemberAsync(array $params)
     {
-        return $this->queryAsync(ChatMember::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -697,7 +697,7 @@ trait APIRequestsAsync
      */
     public function setChatStickerSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -711,7 +711,7 @@ trait APIRequestsAsync
      */
     public function deleteChatStickerSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -729,7 +729,7 @@ trait APIRequestsAsync
      */
     public function answerCallbackQueryAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -749,7 +749,7 @@ trait APIRequestsAsync
      */
     public function editMessageTextAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -768,7 +768,7 @@ trait APIRequestsAsync
      */
     public function editMessageCaptionAsync(array $params = [])
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -786,7 +786,7 @@ trait APIRequestsAsync
      */
     public function editMessageMediaAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -803,7 +803,7 @@ trait APIRequestsAsync
      */
     public function editMessageReplyMarkupAsync(array $params = [])
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -818,7 +818,7 @@ trait APIRequestsAsync
      */
     public function deleteMessageAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -836,7 +836,7 @@ trait APIRequestsAsync
      */
     public function sendStickerAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -850,7 +850,7 @@ trait APIRequestsAsync
      */
     public function getStickerSetAsync(array $params)
     {
-        return $this->queryAsync(StickerSet::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -865,7 +865,7 @@ trait APIRequestsAsync
      */
     public function uploadStickerFileAsync(array $params)
     {
-        return $this->queryAsync(File::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -885,7 +885,7 @@ trait APIRequestsAsync
      */
     public function createNewStickerSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -903,7 +903,7 @@ trait APIRequestsAsync
      */
     public function addStickerToSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -918,7 +918,7 @@ trait APIRequestsAsync
      */
     public function setStickerPositionInSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -932,7 +932,7 @@ trait APIRequestsAsync
      */
     public function deleteStickerFromSetAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -952,7 +952,7 @@ trait APIRequestsAsync
      */
     public function answerInlineQueryAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -969,7 +969,7 @@ trait APIRequestsAsync
      */
     public function answerShippingQueryAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -985,7 +985,7 @@ trait APIRequestsAsync
      */
     public function answerPreCheckoutQueryAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -1000,7 +1000,7 @@ trait APIRequestsAsync
      */
     public function setPassportDataErrorsAsync(array $params)
     {
-        return $this->queryAsync(true, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -1018,7 +1018,7 @@ trait APIRequestsAsync
      */
     public function sendGameAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -1038,7 +1038,7 @@ trait APIRequestsAsync
      */
     public function setGameScoreAsync(array $params)
     {
-        return $this->queryAsync(Message::class, $params);
+        return $this->queryAsync($params);
     }
 
     /**
@@ -1055,11 +1055,11 @@ trait APIRequestsAsync
      */
     public function getGameHighScoresAsync(array $params)
     {
-        return $this->queryAsync(GameHighScore::class, $params);
+        return $this->queryAsync($params);
     }
 
     //
-    private function queryAsync($type, array $params = [])
+    private function queryAsync(array $params = [])
     {
         // get the method from the fucntion name
         [$query, $caller] = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
@@ -1068,8 +1068,6 @@ trait APIRequestsAsync
         $request = new Request(substr($caller['function'], 0, -5), $params);
 
         // send the request, this method will return an instance of the responseType
-        return $this->sendAsync($request, [
-            'type' => $type
-        ]);
+        return $this->sendAsync($request);
     }
 }
