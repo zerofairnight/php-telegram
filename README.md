@@ -31,6 +31,25 @@ To use this library create a new instance of the [`Telegram\Telegram`](src/Teleg
 - `token` - The telegram bot token given to you by [@BotFather](https://t.me/BotFather)
 - `username` - The telegram bot username, is optional but you may find its convenient
 
+## Usage
+
+- sendMessage - https://core.telegram.org/bots/api#sendmessage
+
+```php
+use Telegram\ParseMode;
+
+$message = $telegram->sendMessage([
+    'chat_id' => 123456,
+
+    'parse_mode' => 'markdown', // case insensitive
+    // or
+    'parse_mode' => ParseMode::MARKDOWN,
+
+    'text' => 'a text message',
+    'disable_notification' => true // silent message
+]);
+```
+
 ## Proxy
 
 If you need to setup a proxy you can use the second parameter as a config for the `GuzzleHttp\Client`
