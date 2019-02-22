@@ -2,6 +2,7 @@
 
 namespace Telegram\Tests\Unit;
 
+use Telegram\ParseMode;
 use Telegram\InputFile;
 use Telegram\ChatAction;
 use Telegram\Exception\RequestException as TelegramRequestException;
@@ -67,6 +68,7 @@ class TelegramTest extends TestCase
         $message = $this->telegram()->sendMessage([
             'chat_id' => $chat_id,
             'text' => $text,
+            'parse_mode' => ParseMode::MARKDOWN,
             'disable_notification' => true
         ]);
 
@@ -100,6 +102,19 @@ class TelegramTest extends TestCase
         $this->assertInternalType(IsType::TYPE_ARRAY, $message->entities);
 
         $this->assertCount(1, $message->commands());
+    }
+
+    public function test_sendPhoto()
+    {
+        $chat_id = $_ENV['TELEGRAM_CHAT_ID'];
+
+        $message = $this->telegram()->sendPhoto([
+            'chat_id' => $chat_id,
+            'caption' => 'a photo',
+            'photo' => InputFile::create(__DIR__.'/../files/photo.jpg')
+        ]);
+
+        $this->assertInstanceOf(\Telegram\Types\Message::class, $message);
     }
 
     public function test_sendMessage_forwardMessage_editMessageText()
