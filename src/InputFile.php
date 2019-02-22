@@ -51,7 +51,7 @@ class InputFile
 
     public function open()
     {
-        return $this->file;
+        // return $this->file;
 
         // if its a rerouce its already open
         if (is_resource($this->file) && get_resource_type($this->file) === 'stream') {
@@ -65,6 +65,7 @@ class InputFile
 
         // we have a string that point to a file
         if (is_string($this->file) && is_file($this->file) && is_readable($this->file)) {
+            // new GuzzleHttp\Psr7\LazyOpenStream($this->file, 'r')
             return $this->handle = fopen($this->file, 'r');
         }
     }
@@ -76,7 +77,7 @@ class InputFile
      * @param string $filename
      * @return InputFile
      */
-    public static function create($file, $filename = null): InputFile
+    public static function create($file, $filename = null)
     {
         return new static($file, $filename);
     }
